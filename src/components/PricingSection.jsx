@@ -13,7 +13,7 @@ import {
   DollarSign,
   Sparkles,
 } from "lucide-react";
-
+import img from "@/components/images/design2.png"; // Updated image import
 export default function PricingSection() {
   const [billingPeriod, setBillingPeriod] = useState("monthly");
 
@@ -175,7 +175,14 @@ export default function PricingSection() {
   };
 
   return (
-    <section id="pricing" className="py-20  relative overflow-hidden pb-12">
+    <section id="pricing" className="py-20  relative overflow-hidden pb-10">
+      <div className="absolute inset-0 top-0 z-10 opacity-30">
+        <img
+          src={img}
+          alt="abstract background"
+          className="w-full h-full object-cover opacity-50"
+        />
+      </div>
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-80 h-80 bg-gradient-to-br from-cyan-200/20 to-blue-200/20 rounded-full blur-3xl animate-float"></div>
@@ -246,7 +253,7 @@ export default function PricingSection() {
           {currentPlans.map((plan, index) => (
             <div
               key={plan.name}
-              className="relative overflow-hidden p-1 rounded-3xl pb-3 "
+              className="relative overflow-hidden p-1 rounded-3xl pb-1 "
             >
               {" "}
               {/* Added h-full here */}
@@ -254,7 +261,7 @@ export default function PricingSection() {
               <div className="absolute -inset-2 bg-slate-800 rounded-3xl transform translate-y-2 -z-10"></div>
               {/* Decorative element at top left */}
               <svg
-                className="absolute top-0 -right-28 w-60 h-40 z-40 rotate-90 scale-y-125"
+                className="absolute top-0 -right-24 w-44 h-40 z-40 rotate-90 scale-y-100"
                 viewBox="0 0 200 200"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -265,7 +272,7 @@ export default function PricingSection() {
               </svg>
               {/* Your existing card */}
               <Card
-                className={`group m-1 b-2 rounded-3xl bg-gradient-to-br ${getCardGradient(
+                className={`group m-0 b-2 rounded-3xl bg-gradient-to-br ${getCardGradient(
                   plan.cardType
                 )} border-0 shadow-lg hover:shadow-2xl transition-all duration-500  animate-slide-in-up h-full flex flex-col`} /* Added h-full and flex classes */
               >
